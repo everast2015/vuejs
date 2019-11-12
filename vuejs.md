@@ -82,5 +82,18 @@ axios.interceptors.request.use(
         return Promise.reject(err) // 抛出错误
     }
 )
+
+axios.interceptors.response.use(
+    response=> {
+        if(response.status == '999') {
+            console.log('token过期')
+        }
+        return response
+    },err=> {
+        return Promise.reject(err)
+    }
+)
+
+export default axios;
 ```
 
