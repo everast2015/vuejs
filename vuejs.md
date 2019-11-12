@@ -66,5 +66,18 @@ methods: {
     }
 }
 
+
+// http.js 方法
+
+import axios from 'axios';
+import router from './router.js'
+
+axios.interceptors.request.use(
+    config=> {
+        if(localstorage.token) {
+            config.headers.authorization = localstorage.token // 从缓存中拿到token
+        }
+    }
+)
 ```
 
