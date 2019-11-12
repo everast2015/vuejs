@@ -57,7 +57,11 @@ methods: {
             username: this.username,
             pwd: this.pwd, // 默认data中的数据
         }
-        this.$http.get(this.url, parama)
+        this.$http.get(this.url, parama).then((res) => {
+            console.log('数据请求成功')
+        }),err => {
+            console.log('数据请求失败')
+        }
     }
 }
 
