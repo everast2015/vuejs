@@ -51,5 +51,15 @@ import axios from 'axios'
 
 axios.prototype.$http = axios; // 将其放在原型链上，后续页面中，可以直接访问，this.$http
 
+methods: {
+    getUsername() {
+        let params = {
+            username: this.username,
+            pwd: this.pwd, // 默认data中的数据
+        }
+        this.$http.get(this.url, parama)
+    }
+}
+
 ```
 
