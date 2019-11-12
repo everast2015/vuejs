@@ -45,4 +45,11 @@ destory() {
 
 ## axios 实现token 拦截
 
+```js
+// main.js 中
+import axios from 'axios'
+
+axios.prototype.$http = axios; // 将其放在原型链上，后续页面中，可以直接访问，this.$http
+
+```
 
