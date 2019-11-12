@@ -77,6 +77,9 @@ axios.interceptors.request.use(
         if(localstorage.token) {
             config.headers.authorization = localstorage.token // 从缓存中拿到token
         }
+        return config
+    },err=> {
+        return Promise.reject(err) // 抛出错误
     }
 )
 ```
